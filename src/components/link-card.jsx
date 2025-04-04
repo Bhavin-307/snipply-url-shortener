@@ -54,7 +54,7 @@ const LinkCard = ({url = [], fetchUrls}) => {
         className="cursor-pointer"
           variant="ghost"
           onClick={() =>
-            navigator.clipboard.writeText(`https://trimrr.in/${url?.short_url}`)
+            navigator.clipboard.writeText(`https://snipplyurl.netlify.app/${url?.short_url}`)
           }
         >
           <Copy />
