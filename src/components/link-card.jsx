@@ -39,7 +39,7 @@ const LinkCard = ({url = [], fetchUrls}) => {
           {url?.title}
         </span>
         <span className="text-md lg:text-2xl text-blue-400 font-bold hover:underline cursor-pointer">
-          https://snipply.in/{url?.custom_url ? url?.custom_url : url.short_url}
+        https://snipplyurl.netlify.app/{url?.custom_url ? url?.custom_url : url.short_url}
         </span>
         <span className="text-sm overflow-hidden lg:text-xl flex items-center gap-1 hover:underline cursor-pointer">
           <LinkIcon className="p-1" />
