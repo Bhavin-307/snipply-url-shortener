@@ -34,7 +34,7 @@ export async function getLongUrl(id) {
   let {data: shortLinkData, error: shortLinkError} = await supabase
     .from("urls")
     .select("id, original_url")
-    .or(`(short_url.eq.${id},custom_url.eq.${id})`) // Fixed: Added parentheses around conditions
+    .or(`short_url.eq.${id},custom_url.eq.${id}`)
     .single();
 
   if (shortLinkError && shortLinkError.code !== "PGRST116") {
