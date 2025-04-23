@@ -66,6 +66,8 @@ const LinkPage = () => {
     link = url?.custom_url ? url?.custom_url : url.short_url;
   }
 
+  const baseUrl = import.meta.env.VITE_BASE_URL;
+
   return (
     <>
       {(loading || loadingStats) && (
@@ -77,11 +79,11 @@ const LinkPage = () => {
             {url?.title}
           </span>
           <a
-            href={`https://snipplyurl.netlify.app/${link}`}
+            href={`${baseUrl}/${link}`}
             target="_blank"
             className="text-3xl sm:text-4xl text-blue-400 font-bold hover:underline cursor-pointer"
           >
-            https://snipplyurl.netlify.app/{link}
+            {baseUrl}/{link}
           </a>
           <a
             href={url?.original_url}
@@ -99,7 +101,7 @@ const LinkPage = () => {
             className="cursor-pointer"
               variant="ghost"
               onClick={() =>
-                navigator.clipboard.writeText(`https://snipplyurl.netlify.app/${link}`)
+                navigator.clipboard.writeText(`${baseUrl}/${link}`)
               }
             >
               <Copy />
