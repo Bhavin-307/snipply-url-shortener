@@ -78,7 +78,7 @@ const Login = () => {
       <CardHeader>
         <CardTitle>Login</CardTitle>
         <CardDescription>Access your account</CardDescription>
-        <Error message="Invalid Credantials" />
+        {error && <Error message="Invalid Credentials" />}
       </CardHeader>
       <CardContent className="space-y-2">
         <div className="space-y-1">
@@ -86,6 +86,7 @@ const Login = () => {
             name="email"
             type="email"
             placeholder="Enter Email"
+            aria-label="Email"
             onChange={handleInputChange}
           />
           {errors.email && <Error message={errors.email} />}
@@ -95,6 +96,7 @@ const Login = () => {
             name="password"
             type="password"
             placeholder="Enter Password"
+            aria-label="Password"
             onChange={handleInputChange}
           />
           {errors.password && <Error message={errors.password} />}
@@ -110,6 +112,5 @@ const Login = () => {
       </CardFooter>
     </Card>
   );
-};
 
 export default Login;
