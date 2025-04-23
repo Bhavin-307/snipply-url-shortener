@@ -112,5 +112,6 @@ const Login = () => {
       </CardFooter>
     </Card>
   );
+};
 
 export default Login;
